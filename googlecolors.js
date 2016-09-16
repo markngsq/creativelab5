@@ -1,3 +1,5 @@
+
+
 function getGoogleColors (color) {
     var base_colors=["4285F4","34A853","FBBC05","EA4235"];
 
@@ -9,7 +11,7 @@ function getGoogleColors (color) {
     var color_g = color_rgb.split(',')[1];
     var color_b = color_rgb.split(',')[2];
 
-    //Create an emtyp array for the difference betwwen the colors
+    //Create an empty array for the difference between the colors
     var differenceArray=[];
 
     //Function to find the smallest value in an array
@@ -19,7 +21,7 @@ function getGoogleColors (color) {
 
 
     //Convert the HEX color in the array to RGB colors, split them up to R-G-B, then find out the difference between the "color" and the colors in the array
-    $.each(base_colors, function(index, value) { 
+    $.each(base_colors, function(index, value) {
         var base_color_rgb = hex2rgb(value);
         var base_colors_r = base_color_rgb.split(',')[0];
         var base_colors_g = base_color_rgb.split(',')[1];
@@ -36,15 +38,15 @@ function getGoogleColors (color) {
     var index = differenceArray.indexOf(lowest);
 
     //Function to convert HEX to RGB
-    function hex2rgb( colour ) {
+    function hex2rgb( color ) {
         var r,g,b;
-        if ( colour.charAt(0) == '#' ) {
-            colour = colour.substr(1);
+        if ( color.charAt(0) == '#' ) {
+            color = color.substr(1);
         }
 
-        r = colour.charAt(0) + colour.charAt(1);
-        g = colour.charAt(2) + colour.charAt(3);
-        b = colour.charAt(4) + colour.charAt(5);
+        r = color.charAt(0) + color.charAt(1);
+        g = color.charAt(2) + color.charAt(3);
+        b = color.charAt(4) + color.charAt(5);
 
         r = parseInt( r,16 );
         g = parseInt( g,16 );
